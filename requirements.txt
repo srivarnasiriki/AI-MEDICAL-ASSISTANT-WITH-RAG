@@ -7,17 +7,20 @@
 flask==3.0.3
 flask-cors==4.0.1
 
+# WSGI server (for Render)
+gunicorn==21.2.0
+
 # HTTP (Groq API calls)
 requests==2.32.3
 
 # Environment variables (.env file support)
 python-dotenv==1.0.1
 
-# Vector database (VERIFIED version — 1.8.0 does NOT exist)
-faiss-cpu>=1.8.0
+# NumPy (must be installed before faiss-cpu)
+numpy==1.26.4
 
-# NumPy <2.0 required (faiss-cpu incompatible with numpy 2.x)
-numpy>=1.24.0,<2.0.0
+# Vector database
+faiss-cpu==1.7.4
 
 # NOTE: Removed sentence-transformers to reduce memory footprint
 # Using API-based embeddings instead (Groq API or lightweight keyword-based)
